@@ -1,0 +1,14 @@
+Site Benti Digital — version HTML responsive
+
+Contenu :
+  index.html      la page
+  style.css       la mise en forme (couleurs en haut du fichier)
+  main.js         menu mobile + lecture des vidéos quand elles sont visibles
+  assets/         images, vidéos, polices (hébergées localement, pas d'appel à Google)
+
+À modifier avant la mise en ligne :
+  L'adresse e-mail du bouton « Écrivez-moi » et du pied de page :
+  déjà réglé sur bentidigital27@gmail.com (chercher cette adresse dans index.html pour la changer).
+
+Mise en ligne : déposer le contenu de ce dossier (pas le dossier lui-même)
+à la racine de l'hébergement. Aucune base de données ni PHP nécessaire.
