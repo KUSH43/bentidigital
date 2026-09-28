@@ -274,7 +274,7 @@ section{position:relative}
   .stats{grid-template-columns:1fr 1fr;gap:14px}
   .stats__a{grid-column:1/-1}
   .results__flower{left:-60px;top:20px}
-  .contact__visual{margin-left:-20px;margin-right:-20px}
+  .contact__visual{margin-left:-6px;margin-right:-20px}
   .contact__together{position:static;transform:none;text-align:center;font-size:20px;margin-top:6px}
   .contact__side{gap:36px}
 }
@@ -296,7 +296,7 @@ section{position:relative}
   html{scroll-behavior:auto}
 }
 a.phone,a.post{display:block;text-decoration:none;color:inherit;cursor:pointer;transition:transform .2s ease}
-a.phone:hover,a.post:hover{transform:translateY(-4px)}
+@media (hover:hover) and (pointer:fine){a.phone:hover,a.post:hover{transform:translateY(-4px)}}
 a.phone:focus-visible,a.post:focus-visible{outline:3px solid var(--pink);outline-offset:4px}
 /* bouton son */
 .phone-box{position:relative;width:100%;max-width:220px;margin:0 auto}
