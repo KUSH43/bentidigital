@@ -188,9 +188,10 @@ section{position:relative}
 .scallop-bottom+.work--yellow{padding-top:calc(clamp(56px,8vw,90px) + 34px)}
 .work--cream:has(+.scallop-top){padding-bottom:calc(clamp(56px,8vw,90px) + 34px)}
 
-.phones{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3.4vw,60px);margin:clamp(30px,5vw,48px) auto 0;max-width:1100px}
+.phones{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,3.4vw,60px);margin:clamp(30px,5vw,48px) auto 0;max-width:1100px}
 .phones figure{display:flex;flex-direction:column;align-items:center;gap:22px}
-.phones figcaption a{font-size:18px;color:var(--yellow);text-underline-offset:4px}
+.phones figcaption{max-width:100%;text-align:center;overflow-wrap:anywhere}
+.phones figcaption a{font-size:clamp(15px,1.4vw,18px);color:var(--yellow);text-underline-offset:4px}
 .phone{position:relative;width:100%;max-width:220px;margin:0 auto;border-radius:clamp(22px,3vw,34px);padding:clamp(5px,.7vw,8px);background:linear-gradient(145deg,#3a3a3a,#0c0c0c 40%,#2b2b2b);box-shadow:0 0 0 1.5px #9a9a9a,0 16px 22px -8px rgba(0,0,0,.35)}
 .phone::after{content:"";position:absolute;top:clamp(5px,.7vw,8px);left:50%;transform:translateX(-50%);width:48%;height:clamp(12px,1.6vw,20px);background:#0c0c0c;border-radius:0 0 14px 14px;z-index:2}
 .phone video{width:100%;aspect-ratio:186/414;object-fit:cover;border-radius:clamp(17px,2.4vw,27px);background:#ddd}
@@ -242,6 +243,7 @@ section{position:relative}
 .contact{background:var(--cream);padding:clamp(40px,6vw,70px) 0 clamp(50px,6vw,80px);overflow:hidden}
 .contact__grid{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(24px,4vw,60px);align-items:center;padding-left:0}
 .contact__visual{position:relative;container-type:inline-size;margin-left:calc(-1 * max(0px,(100vw - var(--wrap))/2) - 20px)}
+.contact__art{position:relative}
 .contact__visual img{width:100%;height:auto}
 .contact__together{position:absolute;left:14%;top:76%;font-family:var(--round);font-weight:700;color:var(--bordeaux);font-size:max(15px,2.6cqw);transform:rotate(-2deg)}
 .contact__together span{background:linear-gradient(transparent 85%,var(--pink) 85%)}
@@ -265,7 +267,7 @@ section{position:relative}
   :root{--scallop:56px}
   .tools__grid,.contact__grid{grid-template-columns:1fr}
   .tools__visual{max-width:380px}
-  .phones{grid-template-columns:repeat(2,1fr);gap:26px 22px;max-width:480px}
+  .phones{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 22px;max-width:480px}
   .posts{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding:6px 20px 26px;margin:30px -20px 0;scrollbar-width:none}
   .posts::-webkit-scrollbar{display:none}
   .post{flex:0 0 min(78vw,330px);scroll-snap-align:center}
