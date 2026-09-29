@@ -61,3 +61,28 @@ soundBtns.forEach(btn => btn.addEventListener('click', e => {
     btn.setAttribute('aria-pressed', 'true'); btn.setAttribute('aria-label', 'Couper le son');
   }
 }));
+
+// Pois des services : on n'affiche que des pois entiers, jamais coupés par le titre ou les cartes
+(function(){
+  const sec=document.querySelector('.services'); const svg=sec&&sec.querySelector('.services__dots');
+  if(!svg) return;
+  function draw(){
+    const small=window.innerWidth<=520, step=small?54:70, r=small?6:7.5;
+    const starts=small?[[35,35],[8,8]]:[[45,45],[10,10]];
+    const R=sec.getBoundingClientRect(), W=R.width, H=R.height, gap=r+3;
+    const blocks=[...sec.querySelectorAll('.services__head, .card')].map(e=>{const b=e.getBoundingClientRect();return [b.left-R.left-gap,b.top-R.top-gap,b.right-R.left+gap,b.bottom-R.top+gap]});
+    let out='';
+    for(const [sx,sy] of starts){
+      for(let y=sy;y<H+r;y+=step) for(let x=sx;x<W+r;x+=step){
+        if(blocks.some(b=>x>b[0]&&x<b[2]&&y>b[1]&&y<b[3])) continue;
+        out+='<circle cx="'+x+'" cy="'+y+'" r="'+r+'"/>';
+      }
+    }
+    svg.setAttribute('viewBox','0 0 '+W+' '+H);
+    svg.innerHTML='<g fill="currentColor">'+out+'</g>';
+    sec.classList.add('has-dots');
+  }
+  draw(); addEventListener('resize',()=>{clearTimeout(draw.t);draw.t=setTimeout(draw,120)});
+  if(document.fonts) document.fonts.ready.then(draw);
+  addEventListener('load',draw);
+})();
