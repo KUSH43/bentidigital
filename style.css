@@ -263,7 +263,9 @@ section{position:relative}
 
 /* ---------- Footer ---------- */
 .band--footer{padding:14px 0}
-.footer__legal{background:var(--bordeaux);color:var(--yellow);text-align:center;font-size:14px;padding:4px 20px 18px;opacity:.85}
+.footer__legal{background:var(--bordeaux);color:rgba(255,239,189,.85);text-align:center;font-size:14px;padding:4px 20px 18px}
+.footer{background:var(--bordeaux)}
+html{background:var(--bordeaux)}
 
 /* ================= RESPONSIVE ================= */
 @media (max-width:1000px){
